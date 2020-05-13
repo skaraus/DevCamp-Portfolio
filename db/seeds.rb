@@ -1,7 +1,16 @@
+3.times do |topic|
+    Topic.create!(
+        title: "Topic #{topic}"
+    )
+end
+
+puts "3 Topics Created"
+
 10.times do |blog|
     Blog.create!(
         title: "My Blog Post Number #{blog}",
-        body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum hendrerit malesuada. Mauris condimentum purus et ligula aliquam, a consectetur odio tristique. Donec ullamcorper sed lacus sit amet scelerisque. Suspendisse at nisi neque. Duis vestibulum orci accumsan malesuada commodo. Morbi purus erat, consequat at arcu vel, elementum ultrices orci. Pellentesque efficitur ultricies placerat."
+        body:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas interdum hendrerit malesuada. Mauris condimentum purus et ligula aliquam, a consectetur odio tristique. Donec ullamcorper sed lacus sit amet scelerisque. Suspendisse at nisi neque. Duis vestibulum orci accumsan malesuada commodo. Morbi purus erat, consequat at arcu vel, elementum ultrices orci. Pellentesque efficitur ultricies placerat.",
+        topic_id: Topic.last.id
     )
 end
 
@@ -16,15 +25,24 @@ end
 
 puts "5 Skills Created"
 
-9.times do |item|
+6.times do |item|
     Portfolio.create!(
         title: "Item #{item}",
-        subtitle: "Portfolio Item: #{item}",
+        subtitle: "Ruby on Rails",
         body: "This is a generic body",
         main_image: "http://placehold.it/600x400",
         thumb_image: "http://placehold.it/350x200"
     )
-end    
-
+end  
+  
+3.times do |item|
+    Portfolio.create!(
+        title: "Item #{item}",
+        subtitle: "Angular",
+        body: "This is a generic body",
+        main_image: "http://placehold.it/600x400",
+        thumb_image: "http://placehold.it/350x200"
+    )
+end   
 
 puts "9 Portfolio Items Created"
